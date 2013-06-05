@@ -17,17 +17,10 @@ if (process.argv[2]) {
 }
 
 var models = [
-    'js/models/Member',
-    'js/models/Payment',
-    'js/models/Payments',
-    'js/models/Event',
-    'js/models/Events',
-    'js/models/Timeline'
+
 ];
 var views = [
-    'js/views/CreditPaymentView',
-    'js/views/PaymentOptionsView',
-    'js/views/ReceiptView',
+    'js/views/UploadView',
     'js/views/AppView'
 ];
 var routers = [
@@ -37,15 +30,11 @@ var app = [
     'js/App'
 ];
 var data = [
-    'js/data/Countries',
-    'js/data/States'
+
 ];
 var templates = [
     'header',
-    'acceptPayment',
-    'receipt',
-    'warning',
-    'paymentOptions'
+    'uploadFile'
 ];
 
 var vendors = [
@@ -64,27 +53,12 @@ var vendors = [
     'backbone-forms/distribution/templates/bootstrap',
     'backbone-form-typeahead',
     'backbone-form-custom-editors',
-    'backbone-pageable/lib/backbone-pageable',
     'backbone.bootstrap-modal/src/backbone.bootstrap-modal',
-    'select2/select2',
     'moment',
-    'bootstrap-datepicker/js/bootstrap-datepicker',
-    'bootstrap-typeahead',
     'bootstrap/bootstrap/js/bootstrap',
-    'jquery.iframe-transport',
-    'jquery.fileupload',
-    'jquery.fileupload-fp',
-    'jquery.fileupload-ui',
-    'jquery.blockUI',
-    'bootstrap-notify/js/bootstrap-notify',
-    'bootstrap-switch/static/js/bootstrapSwitch',
-    'toolbar/jquery.toolbar',
-    'bootstrap-select/bootstrap-select',
-    'backgrid/lib/backgrid',
-    'backgrid/lib/extensions/paginator/backgrid-paginator',
-    'swag/lib/swag',
-    'jQuery-CreditCardValidator/jquery.creditCardValidator',
-    'credit_card_track_parser/lib/credit_card_track_parser'
+    'jQuery-File-Upload/js/jquery.iframe-transport',
+    'jQuery-File-Upload/js/jquery.fileupload',
+    'swag/lib/swag'
 ];
 
 var bundle = '';
