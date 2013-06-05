@@ -24,6 +24,15 @@ fs.exists(__dirname + '/tmp', function (exists) {
     }
 });
 
+fs.exists(__dirname + '/out', function (exists) {
+    if (!exists) {
+        fs.mkdir(__dirname + '/out', function (d) {
+            console.log("out directory created");
+        });
+    }
+});
+
+
 if (process.argv[2]) {
     if (fs.lstatSync(process.argv[2])) {
         config = require(process.argv[2]);
@@ -38,8 +47,7 @@ if ("log" in config) {
     var access_logfile = fs.createWriteStream(config.log, {flags: 'a'})
 }
 
-var cookieParser = express.cookieParser(),
-    redisSessionStore = new redisStore(redisConfig);
+var cookieParser = express.cookieParser();
 
 if ("ssl" in config) {
 
@@ -89,7 +97,10 @@ app.configure(function(){
     }
     app
         .use(cookieParser)
-        .use(express.bodyParser())
+        .use(express.bodyParser({
+            keepExtensions: true,
+            uploadDir: __dirname + '/tmp'
+        }))
         .use(express.methodOverride())
         .use(allowCrossDomain)
         .use('/bootstrap', express.static(__dirname + '/vendors/bootstrap'))
@@ -132,7 +143,8 @@ routes.setKey("io", app.io);
 =============================================================== */
 
 // API:Registrants
-//app.get('/check/:submissionId', routes.index);
+app.post('/uploadFile', routes.processCsv);
+app.get('/downloadFile/:fileId', routes.downloadCsv);
 //app.get('/credit/:submissionId', routes.index);
 //app.get('/api/member/:submissionId', routes.member);
 //app.put('/api/member/:submissionId', routes.makePayment);

@@ -18,7 +18,7 @@
         "handlebars": "latest",
         "request": "latest",
         "express-csv": "latest",
-        "node-csv": "latest"
+        "csv": "latest"
     },
     "scripts": {
         "postinstall": "node bundler.js"

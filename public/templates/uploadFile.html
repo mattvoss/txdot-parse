@@ -1,24 +1,22 @@
 <div class="row-fluid">
-    <div class="span6">
+    <div class="span12">
         <div class="hero-unit">
-            <h1>Check Payment</h1>
-            <p>Please view your invoice, print it and mail it to the address on the invoice</p>
+            <h1>Upload your file</h1>
+            <p>Upload your data file in csv format</p>
             <p>
-                <a class="btn btn-primary btn-large invoice">
-                    View Invoice
-                </a>
+                <span class="btn btn-success fileinput-button">
+                    <i class="icon-plus icon-white"></i>
+                    <span>Select files...</span>
+                    <!-- The file input field used as target for the file upload widget -->
+                    <input id="fileupload" type="file" name="files[]">
+                </span>
             </p>
         </div>
-    </div>
-    <div class="span6">
-        <div class="hero-unit">
-            <h1>Credit Payment</h1>
-            <p>If you would like pay by credit immediately</p>
-            <p>
-                <a class="btn btn-primary btn-large credit">
-                    Pay Now Via Credit Card!
-                </a>
-            </p>
+        <!-- The global progress bar -->
+        <div id="progress" class="progress progress-success progress-striped">
+            <div class="bar"></div>
         </div>
+        <!-- The container for the uploaded files -->
+        <div id="files"></div>
     </div>
 </div>
