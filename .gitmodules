@@ -1,0 +1,21 @@
+[submodule "vendors/backbone-forms"]
+    path = vendors/backbone-forms
+    url = git://github.com/powmedia/backbone-forms.git
+[submodule "vendors/bootstrap"]
+    path = vendors/bootstrap
+    url = git://github.com/twitter/bootstrap.git
+[submodule "vendors/backbone"]
+    path = vendors/backbone
+    url = git://github.com/documentcloud/backbone.git
+[submodule "vendors/underscore"]
+    path = vendors/underscore
+    url = https://github.com/documentcloud/underscore
+[submodule "vendors/swag"]
+    path = vendors/swag
+    url = git://github.com/elving/swag.git
+[submodule "vendors/backbone.bootstrap-modal"]
+    path = vendors/backbone.bootstrap-modal
+    url = git://github.com/mattvoss/backbone.bootstrap-modal.git
+[submodule "vendors/jQuery-File-Upload"]
+    path = vendors/jQuery-File-Upload
+    url = git://github.com/blueimp/jQuery-File-Upload.git

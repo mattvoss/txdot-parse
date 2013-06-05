@@ -1,0 +1,144 @@
+<div class="row-fluid">
+    <div class="span4">
+        <img src="//www.vpppa.org/images/vpppa-logo.png" class="img-rounded logo">
+        <address>
+            <strong>{{firstname}} {{lastname}}</strong><br />
+            {{organization}}{{#if siteid}} (#{{siteid}}){{/if}}<br />
+
+            {{address1}}<br />
+            {{#if address2}}
+                {{address2}}<br />
+            {{/if}}
+            {{city}}, {{state_province}} {{zipcode}}<br />
+        </address>
+    </div>
+    <div class="span4 pull-right well">
+        <table class="table-condensed">
+            <tbody>
+                <tr>
+                    <td class="pull-right"><strong>Invoice #</strong></td>
+                    <td>VPPPA-MAPP-{{counter}}</td>
+                </tr>
+                <tr>
+                    <td class="pull-right"><strong>Date</strong></td>
+                    <td>{{now "%m/%d/%Y"}}</td>
+                </tr>
+                <tr>
+                    <td class="pull-right"><strong>Amount Due</strong></td>
+                    <td>{{#empty creditCardTrans}}{{total_price}}{{else}}$0.00{{/empty}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <h2>{{#empty creditCardTrans}}Invoice{{else}}Receipt{{/empty}}</h2>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span12 invoice-body">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>VPPPA Membership Payment</td>
+                    <td>{{now "%m/%d/%Y"}}</td>
+                    <td>{{total_price}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><strong>Total</strong></td>
+                    <td><strong>{{total_price}}</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span6">
+        {{#empty creditCardTrans}}
+
+        {{else}}
+            <table class="table table-bordered table-condensed">
+                <tbody>
+                    {{#each creditCardTrans}}
+                        {{#is this.responseCode 1}}
+                        <tr class="info">
+                            <td colspan="2"><strong>PAYMENT</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="payment-head">Payment Type</td>
+                            <td><small>Credit Card</small></td>
+                        </tr>
+                        <tr>
+                            <td class="payment-head">Amount</td>
+                            <td><small>${{toFixed this.settleAmount 2}}</small></td>
+                        </tr>
+                        <tr>
+                            <td class="payment-head">Credit Card Type</td>
+                            <td><small>{{this.cardType}}</small></td>
+                        </tr>
+                        <tr>
+
+                            <td class="payment-head">Credit Card #</td>
+                            <td><small>{{this.cardNumber}}</small></td>
+
+                        </tr>
+                        <tr>
+
+                            <td class="payment-head">Expiration Date</td>
+                            <td><small>{{this.expirationDate}}</small></td>
+
+                        </tr>
+                        <tr>
+
+                            <td class="payment-head">Reference Number</td>
+                            <td><small>{{this.transId}}</small></td>
+
+                        </tr>
+                        <tr>
+
+                            <td class="payment-head">Date</td>
+                            <td>
+                                <div id='date'>
+                                    <small>{{formatDate this.submitTimeLocal "%m/%d/%Y %I:%M%p"}}</small>
+                                </div>
+                            </td>
+
+                        </tr>
+
+                        {{/is}}
+                    {{/each}}
+                </tbody>
+            </table>
+        {{/empty}}
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span12 well invoice-thank">
+        <h5 style="text-align:center;">Thank You!</h5>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span3">
+        <strong>Phone:</strong> <a href="tel:703-761-1146">703-761-1146</a>
+    </div>
+    <div class="span3">
+        <strong>Email:</strong> <a href="mailto:membership@vpppa.org">membership@vpppa.org</a>
+    </div>
+    <div class="span3">
+        <strong>Website:</strong> <a href="http://vpppa.org">http://vpppa.org</a>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <address><strong>Mailing Address:</strong> 7600-E Leesburg Pike, Suite 100 Falls Church, VA 22043-2004</address>
+    </div>
+</div>

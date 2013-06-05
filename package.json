@@ -1,0 +1,25 @@
+{
+    "name": "TXDotParse",
+    "description": "An app for parsing TXDot contractor data files",
+    "version": "0.1.0",
+    "author": "Matt Voss",
+    "repo": "git@git.8xmedia.com:txdot-parse.git",
+    "keywords": [ ],
+    "dependencies": {
+        "underscore": "latest",
+        "uglify-js": "latest",
+        "express.io": "latest",
+        "session.socket.io": "latest",
+        "async": "latest",
+        "node-uuid": "latest",
+        "glob": "latest",
+        "connect-redis": "latest",
+        "connect-multi-redis": "latest",
+        "handlebars": "latest",
+        "request": "latest",
+        "express-csv": "latest"
+    },
+    "scripts": {
+        "postinstall": "node bundler.js"
+    }
+}
