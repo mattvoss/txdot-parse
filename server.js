@@ -103,7 +103,7 @@ app.configure(function(){
         }))
         .use(express.methodOverride())
         .use(allowCrossDomain)
-        .use('/bootstrap', express.static(__dirname + '/vendors/bootstrap'))
+        .use('/bootstrap', express.static(__dirname + '/vendors/bootstrap/bootstrap'))
         .use('/css', express.static(__dirname + '/public/css'))
         .use('/vendors', express.static(__dirname + '/vendors'))
         .use('/js', express.static(__dirname + '/public/js'))
