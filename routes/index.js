@@ -2,7 +2,6 @@
 
 var fs = require('fs'),
     path = require('path'),
-    mysql = require('mysql'),
     async = require('async'),
     uuid = require("node-uuid"),
     glob = require('glob'),
