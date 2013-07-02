@@ -76,7 +76,7 @@ exports.processCsv = function(req, res) {
     console.log(req.files.files[0].path);
     var stations = {},
         csvFile = [],
-        fileName = path.basename(req.files.files[0].path);
+        fileName = path.basename(req.files.files[0].path).toLowerCase();
     csv()
     .from(req.files.files[0].path)
     .on('record', function(row, index){
