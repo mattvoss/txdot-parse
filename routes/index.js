@@ -96,7 +96,13 @@ exports.processCsv = function(req, res) {
             });
             csvFile.push(row);
         });
-        res.writeHead(200, { 'Content-type': 'application/json' });
+        res.writeHead(200, {
+            "Expires": "Mon, 26 Jul 1997 05:00:00 GMT",
+            "Cache-Control": "no-cache, must-revalidate",
+            "Pragma": "no-cache",
+            "Content-type": "text/plain"
+        });
+        //res.writeHead(200, {"Last-Modified": gmdate("D, d M Y H:i:s") + "GMT"});
         res.write(JSON.stringify(req.files), 'utf-8');
         res.end('\n');
 
